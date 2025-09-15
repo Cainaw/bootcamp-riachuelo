@@ -17,6 +17,10 @@ public class MaquinaBanho {
 		this.limiteShampoo = 10;
 	}
 	
+	public Pet getPet() {
+		return this.pet;
+	}
+	
 	public boolean hasPet() {
 		return this.pet != null;
 	}
@@ -26,10 +30,11 @@ public class MaquinaBanho {
 			if (this.isLimpa == true) {
 				if (this.agua >= 10) {
 					if (this.shampoo >= 2) {
-						this.pet.setLimpeza(true);
-						this.agua -= 10;
-						this.shampoo -= 2;
-					return 1;
+						if (this.pet.setLimpeza(true)) {
+							this.agua -= 10;
+							this.shampoo -= 2;
+							return 1;
+						} return -5;
 					} return -4;
 				} return -3;
 			} return -2;
@@ -62,11 +67,13 @@ public class MaquinaBanho {
 		return this.isLimpa;
 	}
 	
-	public boolean adicionarPet(Pet pet) {
-		if (this.pet == null) {
-			this.pet = pet;
-			return true;
-		} return false;
+	public int adicionarPet(Pet pet) {
+		if (this.isLimpa) {
+			if (this.pet == null) {
+				this.pet = pet;
+				return 1;
+			} return -2;
+		} return -1;
 	}
 	
 	public boolean retirarPet() {

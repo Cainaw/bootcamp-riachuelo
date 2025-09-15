@@ -3,6 +3,7 @@ package bootcamp.classes;
 import bootcamp.classes.carro.Carro;
 import bootcamp.classes.carro.Motorista;
 import bootcamp.classes.conta_bancaria.*;
+import bootcamp.classes.petshop.PetShop;
 
 public class Main {
 
@@ -17,15 +18,13 @@ public class Main {
 		banco.rodarInterface();
 		*/
 		
-		Motorista caina = new Motorista();
-		caina.getCarro().ligar();
 		/*
-		for (int i = 0; i < 6; i++)
-			caina.getCarro().trocarMarcha(true);
-		for (int i = 0; i < 120; i++)
-			caina.getCarro().acelerar();
-		*/
+		Motorista caina = new Motorista();
 		caina.rodarCarro();
+		*/
+		
+		PetShop loja = new PetShop();
+		loja.abrirLoja();
 	}
 
 }
