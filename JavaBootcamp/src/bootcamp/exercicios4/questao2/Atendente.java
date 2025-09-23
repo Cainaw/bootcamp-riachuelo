@@ -4,8 +4,8 @@ public non-sealed class Atendente extends Funcionario {
 	private double valorCaixa;
 	private boolean caixaAberto;
 	
-	public Atendente(String nome, String email, String senha, boolean isAdministrador) {
-		super(nome, email, senha, isAdministrador);
+	public Atendente(String nome, String email, String senha) {
+		super(nome, email, senha, false);
 		this.valorCaixa = 0;
 		this.caixaAberto = false;
 	}

@@ -2,8 +2,8 @@ package bootcamp.exercicios4.questao2;
 
 public non-sealed class Vendedor extends Funcionario {
 	private int contaVenda;
-	public Vendedor(String nome, String email, String senha, boolean isAdministrador) {
-		super(nome, email, senha, isAdministrador);
+	public Vendedor(String nome, String email, String senha) {
+		super(nome, email, senha, false);
 		this.contaVenda = 0;
 	}
 	
@@ -11,7 +11,7 @@ public non-sealed class Vendedor extends Funcionario {
 		this.contaVenda++;
 	}
 	
-	public String consultarVendas() {
-		return "Vendas: " + this.contaVenda;
+	public int consultarVendas() {
+		return this.contaVenda;
 	}
 }
