@@ -19,7 +19,18 @@ public class Sistema {
 		return true;
 	}
 	
-	public Funcionario procurarFuncionario(Funcionario funcionario) {
-		return null;
+	public Funcionario procurarFuncionario(String email) {
+		for (Funcionario funcionario : this.funcionarios) {
+			if (funcionario.getEmail().equals(email))
+				return funcionario;
+		} return null;
+	}
+	
+	public ArrayList<Funcionario> getFuncionarios() {
+		return this.funcionarios;
+	}
+	
+	public double getLucro() {
+		return this.lucro;
 	}
 }
